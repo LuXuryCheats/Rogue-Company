@@ -119,11 +119,6 @@ namespace gui
 
 	void text_function(void* hud, FString string, FLinearColor color, float x, float y)
 	{
-		if (!text_hook) return;
-		if (!hud) return;
-
-		auto text_function = reinterpret_cast<void(__fastcall*)(void*, FString, FLinearColor, float, float, void*, float)>(text_hook);
-		return text_function(hud, string, color, x, y, nullptr, 1);
 	}
 
 	void draw_text(void* hud, FString string, FLinearColor color, float x, float y)
